@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y & W Scholar Transport</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Bungee+Shade&family=Rubik+Glitch&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-brand">
+            <a href="index.html" class="logo-link" aria-label="Y & W Scholar Transport Home">
+                <img src="logo.png" alt="Y & W Scholar Transport Logo" class="header-logo">
+            </a>
+            <div class="header-text">
+                <span class="header-title">Y & W Scholar Transport</span>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="other-page.html">Contact Us</a>
+            <a href="About.html">About</a>
+        </nav>
+    </header>
+
+    <!-- Slideshow Section -->
+    <!-- <section class="slideshow-container">
+        <div class="slideshow">
+            <div class="slide fade"><img src="" alt="Slide 1"></div>
+            <div class="slide fade"><img src="" alt="Slide 2"></div>
+            <div class="slide fade"><img src="" alt="Slide 3"></div>
+            <div class="slide fade"><img src="" alt="Slide 4"></div>
+            <div class="slide fade"><img src="" alt="Slide 5"></div>
+            <div class="slide fade"><img src="" alt="Slide 6"></div>
+            <div class="slide fade"><img src="" alt="Slide 7"></div>
+            <div class="slide fade"><img src="" alt="Slide 8"></div> -->
+
+            <!-- Navigation arrows -->
+            <!-- <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div> -->
+
+        <!-- Dot indicators -->
+        <!-- <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span>
+        </div>
+    </section> -->
+
+    <main>
+       <!-- Section 1: Text Left, Image Right -->
+       <section class="content-section">
+           <div class="content-wrapper">
+               <div class="text-content">
+                   <h2>Our Packages</h2>
+                   <p>We offer flexible transport packages designed for every family's needs. From daily routes to monthly subscriptions, our affordable pricing ensures safe and reliable school transport for your children. Choose from standard, premium, or custom packages tailored to your schedule.</p>
+               </div>
+               <div class="image-content">
+                   <img src="placeholder-packages.jpg" alt="Transport packages">
+               </div>
+           </div>
+       </section>
+
+       <!-- Section 2: Text Right, Image Left -->
+       <section class="content-section reverse">
+           <div class="content-wrapper">
+               <div class="image-content">
+                   <img src="placeholder-services.jpg" alt="Our services">
+               </div>
+               <div class="text-content">
+                   <h2>Our Services</h2>
+                   <p>Safety-first door-to-door transport with GPS tracking and professional drivers. We provide dedicated routes, real-time updates to parents, and flexible pickup times. Our services include morning and afternoon runs, extracurricular activity transport, and emergency backup options.</p>
+               </div>
+           </div>
+       </section>
+
+       <!-- Section 3: Text Left, Image Right -->
+       <section class="content-section">
+           <div class="content-wrapper">
+               <div class="text-content">
+                   <h2>Our Fleet</h2>
+                   <p>Modern, well-maintained vehicles equipped with safety features including seat belts, first aid kits, and GPS tracking. Our fleet is regularly inspected and meets all safety regulations. Each vehicle is cleaned and sanitized daily to ensure a comfortable and safe journey for your children.</p>
+               </div>
+               <div class="image-content">
+                   <img src="placeholder-fleet.jpg" alt="Our fleet">
+               </div>
+           </div>
+       </section>
+
+       <!-- Section 4: Text Right, Image Left -->
+       <section class="content-section reverse">
+           <div class="content-wrapper">
+               <div class="image-content">
+                   <img src="placeholder-testimonials.jpg" alt="Happy families">
+               </div>
+               <div class="text-content">
+                   <h2>Testimonials</h2>
+                   <p>"Y & W Scholar Transport has been a lifesaver for our family. The drivers are punctual, professional, and my kids feel safe every day." - Sarah M.</p>
+                   <p>"Excellent service! GPS tracking gives me peace of mind knowing exactly where my children are." - David L.</p>
+               </div>
+           </div>
+       </section>
+    </main>
+
+    <!-- <script>
+        let slideIndex = 1;
+        let slideTimer;
+
+        // Show slides on page load
+        window.addEventListener('load', function() {
+            showSlides(slideIndex);
+            autoSlides();
+        });
+
+        // Slideshow functions
+        function changeSlide(n) {
+            clearTimeout(slideTimer);
+            showSlides(slideIndex += n);
+            autoSlides();
+        }
+
+        function currentSlide(n) {
+            clearTimeout(slideTimer);
+            showSlides(slideIndex = n);
+            autoSlides();
+        }
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName('slide');
+            const dots = document.getElementsByClassName('dot');
+            
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(' active', '');
+            }
+            
+            slides[slideIndex - 1].style.display = 'block';
+            dots[slideIndex - 1].className += ' active';
+        }
+
+        function autoSlides() {
+            slideTimer = setTimeout(function() {
+                slideIndex++;
+                showSlides(slideIndex);
+                autoSlides();
+            }, 5000); // Change slide every 5 seconds
+        }
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,797 @@
+* { /* Universal selector - applies to all elements */
+    margin: 0; /* Removes default margin from all elements */
+    padding: 0; /* Removes default padding from all elements */
+    box-sizing: border-box; /* Makes width/height include padding and border */
+}
+
+/* Body styles */
+body {
+    font-family: 'Space Grotesk', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets the main font for the website */
+    line-height: 1.6; /* Sets spacing between lines of text */
+    color: #2c3e50; /* Sets default text color to dark gray */
+    background-color: #ffffff; /* Sets page background to white */
+    display: flex; /* Enables flexible box layout */
+    flex-direction: column; /* Stacks items vertically */
+    min-height: 100vh; /* Makes body fill at least full viewport height */
+}
+
+/* Logo Header */
+.site-header {
+    background: #003366; /* Sets header background to navy blue */
+    color: #ffffff; /* Sets header text color to white */
+    padding: 1.25rem 2.5rem; /* Adds space inside header (top/bottom, left/right) */
+    display: flex; /* Enables flexible box layout */
+    align-items: center; /* Vertically centers items in header */
+    justify-content: space-between; /* Pushes header brand and nav apart */
+    gap: 1.25rem; /* Adds space between flex items */
+    border-bottom: 3px solid #d4a574; /* Adds gold bottom border */
+}
+
+.logo-link {
+    display: inline-block; /* Makes link behave like inline element with block properties */
+}
+
+.header-logo {
+    height: 64px; /* Sets logo height to 64 pixels */
+    width: auto; /* Automatically adjusts width to maintain aspect ratio */
+    display: block; /* Makes logo a block element */
+}
+
+.header-brand {
+    display: flex; /* Enables flexible box layout */
+    align-items: center; /* Vertically centers brand elements */
+    gap: 1.5rem; /* Adds space between logo and text */
+}
+
+.header-text {
+    display: flex; /* Enables flexible box layout */
+    flex-direction: column; /* Stacks items vertically */
+    gap: 0.15rem; /* Adds small space between text items */
+}
+
+.header-title {
+    font-family: 'Poppins', 'Space Grotesk', sans-serif; /* Sets heading font to Poppins */
+    font-weight: 800; /* Makes text extra bold */
+    font-size: clamp(1.8rem, 4vw, 2.8rem); /* Responsive font size - smaller */
+    color: #ffffff; /* Sets title color to white */
+    letter-spacing: 0.08em; /* Adds space between letters */
+    line-height: 1.05; /* Sets tight line spacing */
+}
+
+.header-tagline {
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif; /* Sets tagline font */
+    font-size: 0.95rem; /* Sets smaller font size */
+    letter-spacing: 0.14em; /* Adds space between letters */
+    text-transform: uppercase; /* Makes all letters uppercase */
+    color: #e8e9eb; /* Sets tagline color to light gray */
+}
+
+/* Hero */
+.hero {
+    position: relative; /* Allows absolute positioning of child elements */
+    overflow: hidden; /* Hides content that overflows container */
+    padding: 4.5rem 2rem 5.5rem; /* Adds space inside hero (top, left/right, bottom) */
+    max-width: 1200px; /* Limits maximum width */
+    margin: 2rem auto 1rem; /* Centers hero and adds vertical spacing */
+    background: radial-gradient(circle at 20% 20%, rgba(212, 165, 116, 0.12), transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(23, 162, 184, 0.15), transparent 38%),
+                rgba(248, 249, 250, 0.95); /* Creates layered gradient background effects */
+    border: 1px solid rgba(26, 58, 82, 0.25); /* Adds subtle border */
+    border-radius: 20px; /* Rounds the corners */
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08); /* Adds soft shadow underneath */
+}
+
+.hero__glow {
+    position: absolute; /* Positions element relative to hero container */
+    inset: 0; /* Expands to fill entire container (top, right, bottom, left = 0) */
+    background: conic-gradient(from 120deg, rgba(212, 165, 116, 0.15), rgba(23, 162, 184, 0.15), rgba(212, 165, 116, 0.15)); /* Creates circular gradient effect */
+    filter: blur(80px); /* Applies heavy blur for glow effect */
+    opacity: 0.3; /* Makes glow semi-transparent */
+    z-index: 1; /* Positions glow behind content */
+}
+
+.hero__content {
+    position: relative; /* Allows z-index to work */
+    z-index: 2; /* Places content above glow effect */
+    max-width: 760px; /* Limits content width for readability */
+}
+
+.hero__eyebrow {
+    font-family: 'Unbounded', 'Space Grotesk', sans-serif; /* Sets font for small heading */
+    letter-spacing: 0.18em; /* Adds wide letter spacing */
+    text-transform: uppercase; /* Makes all letters uppercase */
+    font-size: 0.85rem; /* Sets small font size */
+    color: #d4a574; /* Sets color to gold */
+    margin-bottom: 0.75rem; /* Adds space below */
+}
+
+.hero__title {
+    font-family: 'Poppins', 'Space Grotesk', sans-serif; /* Sets heading font to Poppins */
+    font-weight: 700; /* Makes text bold */
+    font-size: clamp(2.8rem, 6vw, 4rem); /* Responsive font size (min, preferred, max) */
+    letter-spacing: 0.04em; /* Adds slight letter spacing */
+    color: #003366; /* Sets color to navy blue */
+    margin-bottom: 0.6rem; /* Adds space below */
+}
+
+.hero__subtitle {
+    color: #555; /* Sets text color to medium gray */
+    max-width: 640px; /* Limits width for readability */
+    font-size: 1.05rem; /* Sets slightly larger than normal font */
+    line-height: 1.7; /* Adds space between lines for readability */
+    margin-bottom: 1.6rem; /* Adds space below */
+}
+
+.hero__actions {
+    display: flex; /* Enables flexible box layout */
+    gap: 0.9rem; /* Adds space between buttons */
+    flex-wrap: wrap; /* Allows buttons to wrap to next line if needed */
+}
+
+.button {
+    border: 1px solid transparent; /* Sets transparent border (can be changed on hover) */
+    border-radius: 8px; /* Rounds button corners */
+    font-weight: 700; /* Makes text bold */
+    letter-spacing: 0.02em; /* Adds slight letter spacing */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; /* Smooth transitions for multiple properties */
+    padding: 0.9rem 1.4rem; /* Adds space inside button (top/bottom, left/right) */
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif; /* Sets button font */
+}
+
+.button--primary {
+    background: linear-gradient(120deg, #d4a574, #e8b88a); /* Creates gradient background from gold to lighter gold */
+    color: #ffffff; /* Sets text color to white */
+    box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3); /* Adds shadow below button */
+}
+
+.button--primary:hover {
+    transform: translateY(-2px); /* Moves button up 2 pixels on hover */
+    box-shadow: 0 14px 38px rgba(212, 165, 116, 0.35); /* Increases shadow on hover */
+}
+
+.button--ghost {
+    background: transparent; /* Makes background transparent */
+    color: #003366; /* Sets text color to navy */
+    border-color: rgba(0, 51, 102, 0.35); /* Sets semi-transparent navy border */
+}
+
+.button--ghost:hover {
+    border-color: #d4a574; /* Changes border to gold on hover */
+    color: #d4a574; /* Changes text to gold on hover */
+    transform: translateY(-2px); /* Moves button up 2 pixels on hover */
+}
+
+/* Navigation */
+nav {
+    background: #f8f9fa; /* Sets nav background to light gray */
+    padding: 1rem; /* Adds space inside navigation */
+    border-bottom: 1px solid #d4a574; /* Adds gold bottom border */
+}
+
+/* Nav links */
+nav a {
+    color: #555; /* Sets link color to medium gray */
+    text-decoration: none; /* Removes underline from links */
+    margin: 0 1.2rem; /* Adds horizontal space between links */
+    transition: color 0.3s; /* Smooth color change on hover */
+    text-transform: uppercase; /* Makes all letters uppercase */
+    font-size: 0.9rem; /* Sets slightly smaller font size */
+}
+
+nav a:hover {
+    color: #d4a574; /* Changes link color to gold on hover */
+}
+
+/* Header Navigation */
+.header-nav {
+    display: flex; /* Enables flexible box layout */
+    gap: 2rem; /* Adds space between nav links */
+    background: transparent; /* No background for header nav */
+    padding: 0; /* No padding for header nav */
+    border: none; /* No border for header nav */
+    align-self: flex-end; /* Aligns nav to bottom of header */
+    margin-bottom: 0.5rem; /* Adds small margin from bottom */
+    margin-left: auto; /* Pushes nav all the way to the left */
+}
+
+.header-nav a {
+    color: #ffffff; /* Sets nav link color to white */
+    text-decoration: none; /* Removes underline from links */
+    margin: 0; /* Removes margin */
+    transition: color 0.3s; /* Smooth color change on hover */
+    text-transform: uppercase; /* Makes all letters uppercase */
+    font-size: 0.85rem; /* Sets font size */
+    letter-spacing: 0.05em; /* Adds letter spacing */
+    font-weight: 600; /* Makes text semi-bold */
+}
+
+.header-nav a:hover {
+    color: #d4a574; /* Changes link color to gold on hover */
+}
+
+/* Container */
+.container {
+    max-width: 1200px; /* Limits maximum width */
+    margin: 2rem auto; /* Centers container and adds vertical spacing */
+    padding: 0 2rem; /* Adds horizontal padding */
+}
+
+/* Alternating Content Sections */
+.content-section {
+    max-width: 1400px; /* Limits maximum width */
+    margin: 4rem auto 4rem; /* Centers section and adds vertical spacing */
+    padding: 0 2rem; /* Adds horizontal padding */
+}
+
+.content-wrapper {
+    display: grid; /* Enables CSS grid layout */
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 4rem; /* Adds space between columns */
+    align-items: center; /* Vertically centers items in grid */
+}
+
+.text-content h2 {
+    font-family: 'Poppins', 'Space Grotesk', sans-serif; /* Sets heading font to Poppins */
+    font-weight: 700; /* Makes text bold */
+    font-size: 2.5rem; /* Sets large font size */
+    color: #003366; /* Sets color to navy blue */
+    margin-bottom: 1.5rem; /* Adds space below heading */
+    border: none; /* Removes any border */
+    padding: 0; /* Removes any padding */
+    text-align: left; /* Aligns text to the left */
+}
+
+.text-content p {
+    color: #555; /* Sets text color to medium gray */
+    font-size: 1.1rem; /* Sets slightly larger font */
+    line-height: 1.8; /* Adds space between lines for readability */
+    margin-bottom: 1rem; /* Adds space below paragraph */
+}
+
+.image-content img {
+    width: 100%; /* Makes image fill container width */
+    height: 400px; /* Sets fixed height */
+    object-fit: cover; /* Crops image to fill space while maintaining aspect ratio */
+    border-radius: 12px; /* Rounds image corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+/* Reverse layout for alternating sections */
+.content-section.reverse .content-wrapper {
+    grid-auto-flow: column; /* Enables column flow */
+}
+
+.content-section.reverse .text-content {
+    grid-column: 2; /* Places text content in second column (right) */
+}
+
+.content-section.reverse .image-content {
+    grid-column: 1; /* Places image content in first column (left) */
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) { /* Applies styles only on screens 768px or smaller */
+    .content-wrapper {
+        grid-template-columns: 1fr; /* Changes to single column layout */
+        gap: 2rem; /* Reduces gap between items */
+    }
+    
+    .content-section.reverse .content-wrapper {
+        grid-auto-flow: initial; /* Resets grid flow on mobile */
+    }
+    
+    .content-section.reverse .text-content {
+        grid-column: auto; /* Resets grid column on mobile */
+    }
+    
+    .content-section.reverse .image-content {
+        grid-column: auto; /* Resets grid column on mobile */
+    }
+    
+    .text-content h2 {
+        font-size: 2rem; /* Reduces heading size on mobile */
+    }
+    
+    .image-content img {
+        height: 300px; /* Reduces image height on mobile */
+    }
+}
+
+/* Portfolio grid */
+.portfolio-grid {
+    display: grid; /* Enables CSS grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates responsive columns that fit available space */
+    gap: 2rem; /* Adds space between grid items */
+    margin: 2rem 0; /* Adds vertical spacing above and below grid */
+}
+
+/* Portfolio item */
+.portfolio-item {
+    background: #ffffff; /* Sets background to white */
+    border-radius: 12px; /* Rounds corners */
+    overflow: hidden; /* Hides content that extends beyond rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    transition: transform 0.3s; /* Smooth transform animation */
+    border: 1px solid rgba(26, 58, 82, 0.15); /* Adds subtle navy border */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px); /* Lifts item up 5 pixels on hover */
+}
+
+/* Portfolio images */
+.portfolio-item img {
+    width: 100%; /* Makes image fill container width */
+    height: 200px; /* Sets fixed height */
+    object-fit: cover; /* Crops image to fill space while maintaining aspect ratio */
+}
+
+.portfolio-item-content {
+    padding: 1.5rem; /* Adds space inside content area */
+    color: #2c3e50; /* Sets text color to dark gray */
+}
+
+/* Sections */
+section {
+    padding: 0; /* Removes padding to eliminate box styling */
+    margin: 4rem 0; /* Adds vertical spacing between sections */
+    background: transparent; /* Makes background transparent */
+    color: #2c3e50; /* Sets text color to dark gray */
+    position: relative; /* Allows absolute positioning of child elements */
+}
+
+section > * {
+    position: relative; /* Allows z-index to work on direct children */
+    z-index: 2; /* Places content above any background effects */
+}
+
+/* Section headings */
+section h2 {
+    font-family: 'Poppins', 'Space Grotesk', sans-serif; /* Sets heading font to Poppins */
+    font-weight: 700; /* Makes text bold */
+    text-align: left; /* Aligns text to left */
+    margin-bottom: 1rem; /* Adds space below heading */
+    font-size: 2rem; /* Sets large font size */
+    color: #003366; /* Sets color to navy blue */
+    padding: 0; /* Removes padding */
+    border: none; /* Removes bottom border */
+}
+
+/* Section text */
+section p,
+section ul,
+section li {
+    color: #555; /* Sets text color to medium gray */
+    line-height: 1.8; /* Adds space between lines for readability */
+}
+
+/* Packages Section */
+.packages {
+    max-width: 1200px; /* Limits maximum width */
+    padding: 3rem 2rem; /* Adds space inside section (top/bottom, left/right) */
+}
+
+/* Contact Info Section */
+.contact-info {
+    max-width: 1200px; /* Limits maximum width */
+    margin: 4rem auto; /* Centers section and adds vertical spacing */
+    padding: 3rem 2rem; /* Adds space inside section */
+    text-align: center; /* Centers all text */
+}
+
+.contact-info h2 {
+    font-family: 'Poppins', 'Space Grotesk', sans-serif; /* Sets heading font to Poppins */
+    font-weight: 700; /* Makes text bold */
+    font-size: 2.5rem; /* Sets large font size */
+    color: #003366; /* Sets color to navy blue */
+    margin-bottom: 2rem; /* Adds space below heading */
+    text-align: center; /* Centers heading text */
+}
+
+.contact-item {
+    margin: 1.5rem 0; /* Adds vertical spacing between items */
+    font-size: 1.1rem; /* Sets slightly larger font */
+}
+
+.contact-item i {
+    color: #003366; /* Sets icon color to navy blue */
+    margin-right: 1rem; /* Adds space between icon and text */
+    font-size: 1.5rem; /* Sets icon size */
+}
+
+.contact-item a {
+    color: #003366; /* Sets link color to navy */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s; /* Smooth color change on hover */
+}
+
+.contact-item a:hover {
+    color: #d4a574; /* Changes link color to gold on hover */
+}
+
+/* Bio Info Section */
+.bio-info {
+    max-width: 1200px; /* Limits maximum width */
+    margin: 4rem auto; /* Centers section and adds vertical spacing */
+    padding: 3rem 2rem; /* Adds space inside section */
+    text-align: center; /* Centers all text */
+}
+
+.bio-info h2 {
+    font-family: 'Poppins', 'Space Grotesk', sans-serif; /* Sets heading font to Poppins */
+    font-weight: 700; /* Makes text bold */
+    font-size: 2.5rem; /* Sets large font size */
+    color: #003366; /* Sets color to navy blue */
+    margin-bottom: 2rem; /* Adds space below heading */
+    text-align: center; /* Centers heading text */
+}
+
+.bio-info p {
+    color: #555; /* Sets text color to medium gray */
+    font-size: 1.1rem; /* Sets slightly larger font */
+    line-height: 1.8; /* Adds space between lines for readability */
+}
+
+/* Packages Section */
+
+.intro-text {
+    text-align: center; /* Centers text horizontally */
+    color: #555; /* Sets text color to medium gray */
+    font-size: 1.05rem; /* Sets slightly larger font */
+    margin-bottom: 3rem; /* Adds space below text */
+    max-width: 800px; /* Limits width for readability */
+    margin-left: auto; /* Centers element */
+    margin-right: auto; /* Centers element */
+}
+
+.packages-grid {
+    display: grid; /* Enables CSS grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Creates responsive columns */
+    gap: 1.5rem; /* Adds space between grid items */
+    margin-top: 2rem; /* Adds space above grid */
+}
+
+.package-card {
+    background: #ffffff; /* Sets background to white */
+    border: 1px solid rgba(26, 58, 82, 0.2); /* Adds semi-transparent navy border */
+    border-radius: 12px; /* Rounds corners */
+    padding: 2rem 1.75rem; /* Adds space inside card (top/bottom, left/right) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth animations for multiple properties */
+    position: relative; /* Allows absolute positioning of child elements (badge) */
+}
+
+.package-card:hover {
+    transform: translateY(-4px); /* Lifts card up 4 pixels on hover */
+    box-shadow: 0 12px 36px rgba(212, 165, 116, 0.2); /* Adds gold shadow on hover */
+    border-color: rgba(212, 165, 116, 0.5); /* Changes border to more visible gold on hover */
+}
+
+.package-card--featured {
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.08), #ffffff); /* Creates gradient background from light gold to white */
+    border: 2px solid #d4a574; /* Adds thicker gold border */
+    grid-column: 1 / -1; /* Makes card span all columns */
+    max-width: 600px; /* Limits width of featured card */
+    margin-left: auto; /* Centers card */
+    margin-right: auto; /* Centers card */
+}
+
+.package-badge {
+    position: absolute; /* Positions badge relative to card */
+    top: -12px; /* Moves badge up to sit on top edge */
+    right: 20px; /* Positions badge from right edge */
+    background: linear-gradient(120deg, #d4a574, #e8b88a); /* Creates gradient background */
+    color: #ffffff; /* Sets text color to white */
+    padding: 0.4rem 1rem; /* Adds space inside badge */
+    border-radius: 20px; /* Makes badge pill-shaped */
+    font-size: 0.85rem; /* Sets small font size */
+    font-weight: 700; /* Makes text bold */
+    letter-spacing: 0.05em; /* Adds slight letter spacing */
+    text-transform: uppercase; /* Makes all letters uppercase */
+}
+
+.package-header {
+    display: flex; /* Enables flexible box layout */
+    justify-content: space-between; /* Pushes items to opposite ends */
+    align-items: baseline; /* Aligns items along text baseline */
+    margin-bottom: 1.25rem; /* Adds space below header */
+    padding-bottom: 1rem; /* Adds space inside bottom of header */
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2); /* Adds subtle gold bottom border */
+}
+
+.package-header h3 {
+    font-family: 'Poppins', 'Space Grotesk', sans-serif; /* Sets heading font to Poppins */
+    font-weight: 700; /* Makes text bold */
+    font-size: 1.4rem; /* Sets medium-large font size */
+    color: #003366; /* Sets color to navy blue */
+    margin: 0; /* Removes default margin */
+}
+
+.price {
+    font-size: 1.6rem; /* Sets large font size for price */
+    font-weight: 700; /* Makes text bold */
+    color: #d4a574; /* Sets color to gold */
+}
+
+.package-subtitle {
+    color: #666; /* Sets text color to medium-light gray */
+    font-size: 0.95rem; /* Sets slightly smaller font */
+    margin-bottom: 1rem; /* Adds space below subtitle */
+    font-style: italic; /* Makes text italic */
+}
+
+.package-features {
+    list-style: none; /* Removes default bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+.package-features li {
+    color: #555; /* Sets text color to medium gray */
+    padding: 0.6rem 0; /* Adds vertical spacing */
+    padding-left: 1.75rem; /* Adds left space for checkmark */
+    position: relative; /* Allows absolute positioning of checkmark */
+    line-height: 1.6; /* Adds space between lines */
+}
+
+.package-features li::before {
+    content: "✓"; /* Adds checkmark before each item */
+    position: absolute; /* Positions checkmark absolutely */
+    left: 0; /* Positions checkmark at left edge */
+    color: #d4a574; /* Sets checkmark color to gold */
+    font-weight: bold; /* Makes checkmark bold */
+    font-size: 1.1rem; /* Sets checkmark size slightly larger */
+}
+
+.package-bonus {
+    margin-top: 1.5rem; /* Adds space above bonus section */
+    padding-top: 1.5rem; /* Adds space inside top of bonus section */
+    border-top: 1px solid rgba(212, 165, 116, 0.2); /* Adds gold top border */
+}
+
+.package-bonus strong {
+    color: #003366; /* Sets bold text color to navy */
+    font-size: 1.05rem; /* Sets slightly larger font */
+}
+
+.package-bonus ul {
+    list-style: none; /* Removes default bullet points */
+    padding: 0; /* Removes default padding */
+    margin-top: 0.75rem; /* Adds space above list */
+}
+
+.package-bonus ul li {
+    color: #666; /* Sets text color to medium-light gray */
+    padding: 0.5rem 0; /* Adds vertical spacing */
+    padding-left: 1.75rem; /* Adds left space for star */
+    position: relative; /* Allows absolute positioning of star */
+}
+
+.package-bonus ul li::before {
+    content: "★"; /* Adds star before each bonus item */
+    position: absolute; /* Positions star absolutely */
+    left: 0; /* Positions star at left edge */
+    color: #d4a574; /* Sets star color to gold */
+    font-size: 1rem; /* Sets star size */
+}
+
+/* Mobile adjustments for packages */
+@media screen and (max-width: 768px) { /* Applies styles only on screens 768px or smaller */
+    .packages-grid {
+        grid-template-columns: 1fr; /* Changes to single column layout on mobile */
+    }
+    
+    .package-header {
+        flex-direction: column; /* Stacks header items vertically */
+        align-items: flex-start; /* Aligns items to the left */
+        gap: 0.5rem; /* Adds space between stacked items */
+    }
+}
+
+/* Buttons */
+button {
+    background-color: #d4a574; /* Sets button background to gold */
+    color: #ffffff; /* Sets button text to white */
+    padding: 0.75rem 2rem; /* Adds space inside button (top/bottom, left/right) */
+    border: none; /* Removes default border */
+    border-radius: 4px; /* Slightly rounds button corners */
+    font-weight: bold; /* Makes text bold */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth background color change */
+}
+
+button:hover {
+    background-color: #003366; /* Changes button to navy blue on hover */
+}
+
+/* CTA buttons (contact page) */
+.cta-section {
+    max-width: 560px; /* Limits section width */
+    margin: 1.5rem auto 2rem; /* Centers section and adds vertical spacing */
+    padding: 1.25rem 1.5rem; /* Adds space inside section */
+    background: #ffffff; /* Sets background to white */
+    border-radius: 12px; /* Rounds corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Adds soft shadow */
+}
+
+.cta-buttons {
+    display: flex; /* Enables flexible box layout */
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center; /* Centers buttons vertically */
+    gap: 1rem; /* Adds space between buttons */
+    flex-wrap: wrap; /* Allows buttons to wrap to next line if needed */
+}
+
+.cta-button {
+    padding: 1rem 2.6rem; /* Adds space inside button */
+    font-size: 1rem; /* Sets normal font size */
+    border-radius: 10px; /* Rounds button corners */
+    border: 1px solid transparent; /* Sets transparent border (can be changed on hover) */
+    background: linear-gradient(120deg, #d4a574, #e8b88a); /* Creates gradient background */
+    color: #ffffff; /* Sets text color to white */
+    box-shadow: 0 10px 28px rgba(212, 165, 116, 0.3); /* Adds shadow below button */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; /* Smooth transitions for multiple properties */
+}
+
+.cta-button:hover {
+    transform: translateY(-2px); /* Moves button up 2 pixels on hover */
+    box-shadow: 0 14px 38px rgba(212, 165, 116, 0.35); /* Increases shadow on hover */
+}
+
+.cta-button--ghost {
+    background: transparent; /* Makes background transparent */
+    color: #d4a574; /* Sets text color to gold */
+    border-color: rgba(212, 165, 116, 0.6); /* Sets semi-transparent gold border */
+    box-shadow: none; /* Removes shadow */
+}
+
+.cta-button--ghost:hover {
+    color: #ffffff; /* Changes text to white on hover */
+    background: #d4a574; /* Adds gold background on hover */
+    border-color: #d4a574; /* Changes border to solid gold on hover */
+    box-shadow: 0 12px 32px rgba(212, 165, 116, 0.35); /* Adds shadow on hover */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative; /* Allows absolute positioning of child elements */
+    width: 100%; /* Makes container full width */
+    max-width: 1200px; /* Limits maximum width */
+    background-color: #f8f9fa; /* Sets background to light gray */
+    margin: 2rem auto; /* Centers container and adds vertical spacing */
+    border-radius: 12px; /* Rounds corners */
+}
+
+/* Slideshow */
+.slideshow {
+    position: relative; /* Allows absolute positioning of arrows */
+    width: 100%; /* Makes slideshow full width */
+    height: 500px; /* Sets fixed height */
+    overflow: hidden; /* Hides slides that extend beyond container */
+    border-radius: 12px; /* Rounds corners */
+}
+
+/* Slides */
+.slide {
+    display: none; /* Hides all slides by default (shown with JavaScript) */
+    width: 100%; /* Makes slide full width */
+    height: 100%; /* Makes slide full height */
+}
+
+.slide img {
+    width: 100%; /* Makes image full width */
+    height: 100%; /* Makes image full height */
+    object-fit: cover; /* Crops image to fill space while maintaining aspect ratio */
+}
+
+/* Slide with multiple images */
+.slide .slide-images {
+    display: flex; /* Enables flexible box layout */
+    gap: 8px; /* Adds space between images */
+    width: 100%; /* Makes container full width */
+    height: 100%; /* Makes container full height */
+}
+
+.slide .slide-images img {
+    width: 50%; /* Makes each image take half the width */
+    height: 100%; /* Makes images full height */
+    object-fit: cover; /* Crops images to fill space */
+}
+
+/* Fade animation */
+.fade {
+    animation: fade 1s ease-in-out; /* Applies fade animation over 1 second */
+}
+
+@keyframes fade { /* Defines the fade animation */
+    from { opacity: 0; } /* Starts fully transparent */
+    to { opacity: 1; } /* Ends fully opaque */
+}
+
+/* Slideshow arrows */
+.prev, .next {
+    cursor: pointer; /* Changes cursor to pointer */
+    position: absolute; /* Positions arrows relative to slideshow */
+    top: 50%; /* Positions arrows vertically at middle */
+    padding: 16px; /* Adds space inside arrows */
+    color: #d4a574; /* Sets arrow color to gold */
+    font-weight: bold; /* Makes arrows bold */
+    font-size: 24px; /* Sets arrow size */
+    background-color: rgba(0,0,0,0.6); /* Sets semi-transparent black background */
+    border-radius: 4px; /* Slightly rounds corners */
+    user-select: none; /* Prevents text selection */
+    z-index: 10; /* Places arrows above slides */
+}
+
+.next { right: 0; } /* Positions next arrow at right edge */
+.prev { left: 0; } /* Positions previous arrow at left edge */
+
+.prev:hover, .next:hover {
+    background-color: #d4a574; /* Changes background to gold on hover */
+    color: #ffffff; /* Changes arrow color to white on hover */
+}
+
+/* Dots */
+.dot-container {
+    text-align: center; /* Centers dots horizontally */
+    padding: 1.5rem; /* Adds space inside container */
+    background-color: #f8f9fa; /* Sets background to light gray */
+}
+
+.dot {
+    cursor: pointer; /* Changes cursor to pointer */
+    height: 12px; /* Sets dot height */
+    width: 12px; /* Sets dot width */
+    margin: 0 8px; /* Adds horizontal space between dots */
+    background-color: #ccc; /* Sets inactive dot color to light gray */
+    border-radius: 50%; /* Makes dots circular */
+    display: inline-block; /* Displays dots in a row */
+}
+
+.dot.active, .dot:hover {
+    background-color: #d4a574; /* Changes dot to gold when active or on hover */
+}
+
+/* Footer */
+footer {
+    background: #003366; /* Sets footer background to navy blue */
+    color: #ffffff; /* Sets footer text color to white */
+    text-align: center; /* Centers footer text */
+    padding: 2rem; /* Adds space inside footer */
+    margin-top: auto; /* Pushes footer to bottom */
+    border-top: 3px solid #d4a574; /* Adds gold top border */
+}
+
+main {
+    flex: 1; /* Makes main content expand to fill available space */
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) { /* Applies styles only on screens 768px or smaller */
+    section {
+        padding: 1.5rem 1rem; /* Reduces section padding on mobile */
+        max-width: 95%; /* Increases width on mobile to use more screen space */
+    }
+
+    .header-title {
+        font-size: clamp(2.4rem, 8vw, 4rem); /* Reduces header title size on mobile */
+    }
+
+    .hero {
+        padding: 3rem 1.4rem 3.6rem; /* Reduces hero padding on mobile */
+        margin: 1.5rem 1rem 1rem; /* Adjusts hero margins on mobile */
+    }
+
+    .slideshow {
+        height: 300px; /* Reduces slideshow height on mobile */
+    }
+
+    .prev, .next {
+        padding: 12px; /* Reduces arrow padding on mobile */
+        font-size: 18px; /* Reduces arrow size on mobile */
+    }
+
+    .header-logo {
+        height: 48px; /* Reduces logo size on mobile */
+    }
+}
